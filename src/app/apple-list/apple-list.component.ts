@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { fromEventPattern } from 'rxjs';
 import { Apple } from './Apple';
 
 @Component({
@@ -13,7 +14,7 @@ export class AppleListComponent implements OnInit {
       sign: 'indefinido',
       stock: 3,
       image: 'assets/img/manzana.jpeg',
-      clearance: false,
+      new: false,
       quantity: 0,
     },
     {
@@ -21,7 +22,7 @@ export class AppleListComponent implements OnInit {
       sign: 'indefinido',
       stock: 6,
       image: 'assets/img/manzana.jpeg',
-      clearance: false,
+      new: false,
       quantity: 0,
     },
     {
@@ -29,7 +30,7 @@ export class AppleListComponent implements OnInit {
       sign: 'indefinido',
       stock: 2,
       image: 'assets/img/manzana.jpeg',
-      clearance: true,
+      new: true,
       quantity: 0,
     },
     {
@@ -37,7 +38,7 @@ export class AppleListComponent implements OnInit {
       sign: 'indefinido',
       stock: 1,
       image: 'assets/img/manzana.jpeg',
-      clearance: false,
+      new: false,
       quantity: 0,
     },
   ];
@@ -46,14 +47,4 @@ export class AppleListComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  upQuantity(apple: Apple): void {
-    if (apple.quantity < apple.stock) apple.quantity++;
-  }
-
-  downQuantity(apple: Apple): void {
-    if (apple.quantity > 0) apple.quantity--;
-  }
-  changeQuantity(event, apple: Apple): void {
-    console.log(event.key);
-  }
 }

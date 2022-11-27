@@ -3,6 +3,6 @@ export interface Apple {
   sign: string;
   stock: number;
   image: string;
-  clearance: boolean;
+  new: boolean;
   quantity: number;
 }

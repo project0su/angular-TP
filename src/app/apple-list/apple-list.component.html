@@ -10,23 +10,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let apple of apples" [ngClass]="{'clearance': apple.clearance}">
+        <tr *ngFor="let apple of apples" [ngClass]="{'new': apple.new}">
             <td><img width="90" class="img-thumbnail" [src]="apple.image" [alt]="apple.name"></td>
             <td>{{apple.name }}</td>
             <td>{{apple.sign}}</td>
             <td><span class="badge badge-warning" *ngIf="apple.stock==0">SIN STOCK</span></td>
             <td>
-                <div class="input-group" *ngIf="apple.stock">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <button class="btn btn-primary btn-sm" (click)="downQuantity(apple)">-</button>
-                        </div>
-                        <input type="text" class="text-center" [(ngModel)]="apple.quantity" (keyup)="changeQuantity($event, apple)">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary btn-sm" (click)="upQuantity(apple)">+</button>
-                        </div>
-                    </div>
-                </div>
+                <app-input-integer [apple]="apple" *ngIf="apple.stock"></app-input-integer>
             </td>
         </tr>
     </tbody>
