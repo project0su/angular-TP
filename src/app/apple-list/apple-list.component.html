@@ -1,0 +1,34 @@
+<h3>Lista de cervezas</h3>
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Compra</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let apple of apples" [ngClass]="{'clearance': apple.clearance}">
+            <td><img width="90" class="img-thumbnail" [src]="apple.image" [alt]="apple.name"></td>
+            <td>{{apple.name }}</td>
+            <td>{{apple.type}}</td>
+            <td><span class="badge badge-warning" *ngIf="apple.stock==0">SIN STOCK</span></td>
+            <td>
+                <div class="input-group" *ngIf="apple.stock">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-primary btn-sm" (click)="downQuantity(apple)">-</button>
+                        </div>
+                        <input type="text" class="text-center" [(ngModel)]="apple.quantity" (keyup)="changeQuantity($event, apple)">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary btn-sm" (click)="upQuantity(apple)">+</button>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

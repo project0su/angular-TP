@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { AppleShopComponent } from './AppleShop-apples/AppleShop-apples.component';
+import { AppleShopApplesComponent } from './AppleShop-apples/AppleShop-apples.component';
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'apples',
-    component: AppleShopComponent,
+    component: AppleShopApplesComponent,
   },
   {
     path: 'about',
