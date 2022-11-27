@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AppleShopApplesComponent } from './AppleShop-apples/AppleShop-apples.component';
-
+import { AppleShopAboutComponent } from './AppleShop-about/AppleShop-about.component';
 const routes: Routes = [
   {
     path: '',
@@ -15,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'about',
-    component: AppComponent,
+    component: AppleShopAboutComponent,
   },
 ];
 
