@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Apple } from '../apple-list/Apple';
 
 @Component({
   selector: 'app-input-integer',
@@ -11,18 +10,19 @@ export class InputIntegerComponent implements OnInit {
   constructor() {}
 
   @Input() 
-  apple: Apple;
+  quantity: number;
+  max: number;
 
   ngOnInit(): void {}
 
-  upQuantity(apple: Apple): void {
-    if (apple.quantity < apple.stock) apple.quantity++;
+  upQuantity(): void {
+    if (this.quantity < this.max) this.quantity++;
   }
 
-  downQuantity(apple: Apple): void {
-    if (apple.quantity > 0) apple.quantity--;
+  downQuantity(): void {
+    if (this.quantity > 0) this.quantity--;
   }
-  changeQuantity(event, apple: Apple): void {
+  changeQuantity(event, ): void {
     console.log(event.key);
   }
 }

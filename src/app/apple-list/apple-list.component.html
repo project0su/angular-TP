@@ -16,7 +16,7 @@
             <td>{{apple.sign}}</td>
             <td><span class="badge badge-warning" *ngIf="apple.stock==0">SIN STOCK</span></td>
             <td>
-                <app-input-integer [apple]="apple" *ngIf="apple.stock"></app-input-integer>
+                <app-input-integer [apple]="apple.quantity" [max]="apple.stock" *ngIf="apple.stock"></app-input-integer>
             </td>
         </tr>
     </tbody>
