@@ -1,6 +1,6 @@
 export interface Apple {
   name: string;
-  type: string;
+  sign: string;
   stock: number;
   image: string;
   clearance: boolean;
