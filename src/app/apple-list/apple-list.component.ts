@@ -14,10 +14,12 @@ export class AppleListComponent implements OnInit {
 
       constructor(
         private crate: AppleCrateService,
-        private AppleDataService: AppleDataService) {
-      }
+        private AppleDataService: AppleDataService) {}
 
-      ngOnInit(): void {}
+      ngOnInit(): void {
+        this.AppleDataService.getAll()
+        .subscribe(apples=> this.apples = apples);
+      }
 
       addToCrate(apple): void {
         this.crate.addToCrate(apple);
