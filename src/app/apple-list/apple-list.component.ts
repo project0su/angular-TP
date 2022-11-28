@@ -26,6 +26,12 @@ export class AppleListComponent implements OnInit {
         apple.stock -= apple.quantity;
         apple.quantity = 0;
       }
-    
+      
+      removeFromCrate(apple): void {           //devuelve solo 1
+        this.crate.removeFromCrate(apple);
+        apple.stock+= 1;
+        console.log(apple);
+        apple.quantity = 0;
+      }
 
 }
