@@ -12,7 +12,7 @@ const URL = 'https://6384061a3fa7acb14feb847c.mockapi.io/Apples';
 
 export class AppleDataService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {console.log("constr") }
 
   /**
    * Consume la API y devuelve un observable de la consulta.
