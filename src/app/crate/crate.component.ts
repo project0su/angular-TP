@@ -13,7 +13,7 @@ export class CrateComponent implements OnInit {
   crateList$: Observable<Apple[]>;
   
   constructor(private cart: AppleCrateService) { 
-    this.crateList$ = cart.crateList.asObservable();
+    this.crateList$= cart.crateList.asObservable();
   }
 
   ngOnInit(): void {

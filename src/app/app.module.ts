@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { AppleListComponent } from './apple-list/apple-list.component';
 
 import { FormsModule } from '@angular/forms';
-/* import { BreweryAboutComponent } from './AppleShop-about/AppleShop-about.component'; */
 import { AppleShopAboutComponent } from './AppleShop-about/AppleShop-about.component';
 import { AppleShopApplesComponent } from './AppleShop-apples/AppleShop-apples.component';
 import { CrateComponent } from './crate/crate.component';

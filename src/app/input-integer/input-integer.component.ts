@@ -34,6 +34,9 @@ export class InputIntegerComponent implements OnInit {
     }
   }
   changeQuantity(event): void {
+    if (event.key < 0 || event.key > 9) {
+      event.preventDefault();
+    }
     console.log(event.key);
   }
 }

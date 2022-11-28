@@ -24,7 +24,6 @@ export class AppleCrateService {
     } else {
       item.quantity += apple.quantity;
     }
-    console.log(this._crateList);
     this.crateList.next(this._crateList); // equivalente al emitt de eventos
   }
 

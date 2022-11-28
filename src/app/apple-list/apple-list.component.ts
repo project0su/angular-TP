@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { fromEventPattern } from 'rxjs';
 import { AppleCrateService } from '../apple-crate.service';
+import { AppleDataService } from '../apple-data.service';
 import { Apple } from './Apple';
 
 @Component({
@@ -9,42 +10,11 @@ import { Apple } from './Apple';
   styleUrls: ['./apple-list.component.scss'],
 })
 export class AppleListComponent implements OnInit {
-    apples: Apple[] = [
-        {
-          name: 'Manzana 1',
-          sign: 'indefinido',
-          stock: 3,
-          image: 'assets/img/manzana.jpeg',
-          new: false,
-          quantity: 0,
-        },
-        {
-          name: 'Manzana 2',
-          sign: 'indefinido',
-          stock: 6,
-          image: 'assets/img/manzana.jpeg',
-          new: false,
-          quantity: 0,
-        },
-        {
-          name: 'Manzana 3',
-          sign: 'indefinido',
-          stock: 2,
-          image: 'assets/img/manzana.jpeg',
-          new: true,
-          quantity: 0,
-        },
-        {
-          name: 'Manzana 4',
-          sign: 'indefinido',
-          stock: 1,
-          image: 'assets/img/manzana.jpeg',
-          new: false,
-          quantity: 0,
-        },
-      ];
+    apples: Apple[] = [];
 
-      constructor(private crate: AppleCrateService) {
+      constructor(
+        private crate: AppleCrateService,
+        private AppleDataService: AppleDataService) {
       }
 
       ngOnInit(): void {}
