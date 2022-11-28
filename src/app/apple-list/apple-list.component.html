@@ -19,6 +19,9 @@
                 <app-input-integer [(quantity)]="apple.quantity" [max]="apple.stock" *ngIf="apple.stock"></app-input-integer>
                 cant: {{apple.quantity}}
             </td>
+            <td>
+                <button class="btn btn-primary" (click)="addToCrate(apple)">Comprar</button>
+            </td>
         </tr>
     </tbody>
 </table>

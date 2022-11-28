@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppleCrateService } from '../apple-crate.service';
 
 @Component({
   selector: 'app-crate',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private crate: AppleCrateService) { }
 
   ngOnInit(): void {
   }
