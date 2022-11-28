@@ -33,9 +33,16 @@ export class InputIntegerComponent implements OnInit {
       this.quantityChange.emit(this.quantity);
     }
   }
-  changeQuantity(event): void {
+  changeQuantity(event): void {                                   // fixear numeros repetidos
     if (event.key < 0 || event.key > 9) {
       event.preventDefault();
+    } else {
+      if (this.quantity > 0) {
+        this.quantity+= event.key;
+      } else {
+        this.quantity= event.key;
+      }
+      this.quantityChange.emit(this.quantity);
     }
     console.log(event.key);
   }
