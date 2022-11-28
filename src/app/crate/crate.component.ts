@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { AppleCrateService } from '../apple-crate.service';
+import { Apple } from '../apple-list/Apple';
 
 @Component({
   selector: 'app-crate',
@@ -8,9 +10,13 @@ import { AppleCrateService } from '../apple-crate.service';
 })
 export class CrateComponent implements OnInit {
 
-  constructor(private crate: AppleCrateService) { }
+  cartList$: Observable<Apple[]>;
+  
+  constructor(private cart: AppleCrateService) { 
+    this.cartList$ = cart.crateList.asObservable();
+  }
 
   ngOnInit(): void {
   }
-
+  
 }

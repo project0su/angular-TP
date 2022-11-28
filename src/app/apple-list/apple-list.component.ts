@@ -49,7 +49,7 @@ export class AppleListComponent implements OnInit {
 
       ngOnInit(): void {}
 
-      addToCart(apple): void {
+      addToCrate(apple): void {
         this.crate.addToCrate(apple);
         apple.stock -= apple.quantity;
         apple.quantity = 0;
