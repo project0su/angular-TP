@@ -10,10 +10,10 @@ import { Apple } from '../apple-list/Apple';
 })
 export class CrateComponent implements OnInit {
 
-  cartList$: Observable<Apple[]>;
+  crateList$: Observable<Apple[]>;
   
   constructor(private cart: AppleCrateService) { 
-    this.cartList$ = cart.crateList.asObservable();
+    this.crateList$ = cart.crateList.asObservable();
   }
 
   ngOnInit(): void {
