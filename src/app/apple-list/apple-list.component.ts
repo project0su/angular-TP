@@ -10,17 +10,17 @@ import { Apple } from './Apple';
   styleUrls: ['./apple-list.component.scss'],
 })
 export class AppleListComponent implements OnInit {
-    apples2: Apple[]= [];
+    apples: Apple[]= [];
 
-    apples: Apple[]= [{"name":"Manzana 7","sign":"Indefinido","stock":4,"image":'assets/img/manzana.webp',"new":false, quantity: 0},{"name":"Manzana 2","sign":"Indefinido", "stock":1,"image":"../assets/img/manzana.png","new":false, quantity: 0}];
+    /* apples: Apple[]= [{"name":"Manzana 7","sign":"Indefinido","stock":4,"image":'assets/img/manzana.png',"new":false, quantity: 0},{"name":"Manzana 2","sign":"Indefinido", "stock":1,"image":"assets/img/manzana.png","new":false, quantity: 0}]; */
 
       constructor(
         private crate: AppleCrateService,
         private AppleDataService: AppleDataService) {}
 
       ngOnInit(): void {
-        /* this.AppleDataService.getAll()
-        .subscribe(apples=> this.apples = apples); */
+        this.AppleDataService.getAll()
+        .subscribe(apples=> this.apples = apples);
       }
 
       addToCrate(apple): void {
