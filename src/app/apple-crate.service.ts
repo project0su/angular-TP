@@ -37,12 +37,21 @@ export class AppleCrateService {
     }
     let item= this._crateList[i];
     if(item) {
-      item.quantity-= 1;
-      if (item.quantity== 0) {               //para sacarlo del arreglo
-        this._crateList.splice(i);
-      }
+      item.quantity= 0;                 //para sacarlo del arreglo
+      this._crateList.splice(i);
     }
     this.crateList.next(this._crateList); // equivalente al emitt de eventos
+  }
+
+  returnStock(apple): void {
+    let i: number= 0;
+    while (this._crateList[i].name != apple.name) {
+      i++
+    }
+    let item= this._crateList[i];
+    if(item) {
+      apple.stock+= item.quantity;
+    }
   }
 
 }

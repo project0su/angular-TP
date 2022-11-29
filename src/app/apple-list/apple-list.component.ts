@@ -24,16 +24,17 @@ export class AppleListComponent implements OnInit {
       }
 
       addToCrate(apple): void {
-        this.crate.addToCrate(apple);
-        apple.stock -= apple.quantity;
-        apple.quantity = 0;
+        if (apple.stock - apple.quantity >= 0) {
+          this.crate.addToCrate(apple);
+          apple.stock -= apple.quantity;
+          apple.quantity= 0;
+        }
       }
 
-      removeFromCrate(apple): void {           //devuelve solo 1
-        this.crate.removeFromCrate(apple);
-        apple.stock+= 1;
+      removeFromCrate(apple): void {          
+        this.crate.returnStock(apple);         //devuelve todo el stock consumido por el cajon al item apple
+        this.crate.removeFromCrate(apple);      // para que no quede el elemento con valor 0 en el cajon
         console.log(this.apples);
-        apple.quantity = 0;
       }
 
 

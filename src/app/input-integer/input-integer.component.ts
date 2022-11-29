@@ -21,7 +21,7 @@ export class InputIntegerComponent implements OnInit {
   ngOnInit(): void {}
 
   upQuantity(): void {
-    if (this.quantity < this.max) {
+    if (this.quantity < this.max && this.quantity >= 0) {
       this.quantity++;
       this.quantityChange.emit(this.quantity);
     }
@@ -34,7 +34,7 @@ export class InputIntegerComponent implements OnInit {
     }
   }
   changeQuantity(): void {                                
-      if (this.quantity <= this.max) {
+      if (this.quantity <= this.max && this.quantity >= 0) {
         this.quantityChange.emit(this.quantity);
       } else {
         this.quantity= this.max;
