@@ -17,7 +17,7 @@ export class AppleFavoritesService {
 
   constructor() { }
 
-  addToCrate(apple: Apple) {
+  addTFavorites(apple: Apple) {
     let item: Apple = this._favoritesList.find((v1) => v1.name == apple.name);
     if(!item) {
       this._favoritesList.push({ ... apple});
@@ -25,17 +25,16 @@ export class AppleFavoritesService {
     }
   }
 
-  removeFromCrate(apple: Apple) {
+  removeFromFavorites(apple: Apple) {
     /* let item: Apple = this._crateList.find((v1) => v1.name == apple.name); */
     let i: number= 0;
     while (this._favoritesList[i] != null && (this._favoritesList[i].name != apple.name)) {
       i++
     }
     let item= this._favoritesList[i];
-    if(item) {
-      item.quantity= 0;                 //para sacarlo del arreglo
+    if(item) {               //para sacarlo del arreglo
       this._favoritesList.splice(i);
+      this.favoritesList.next(this._favoritesList); // equivalente al emitt de eventos
     }
-    this.favoritesList.next(this._favoritesList); // equivalente al emitt de eventos
   }
 }
