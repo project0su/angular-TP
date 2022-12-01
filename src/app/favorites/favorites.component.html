@@ -1,0 +1,6 @@
+<h3>Cajon de manzanas favoritas Piscis</h3>
+<ul>
+  <li *ngFor="let apple of (favoritesList$ | async)">
+      {{apple.name}}: {{apple.quantity}}
+  </li>
+</ul>

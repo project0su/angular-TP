@@ -10,6 +10,7 @@ import { AppleShopAboutComponent } from './AppleShop-about/AppleShop-about.compo
 import { AppleShopApplesComponent } from './AppleShop-apples/AppleShop-apples.component';
 import { CrateComponent } from './crate/crate.component';
 import { InputIntegerComponent } from './input-integer/input-integer.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { InputIntegerComponent } from './input-integer/input-integer.component';
     AppleShopAboutComponent,
     AppleShopApplesComponent,
     InputIntegerComponent,
-    CrateComponent
+    CrateComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,
