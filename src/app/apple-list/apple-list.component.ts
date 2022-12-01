@@ -14,6 +14,7 @@ export class AppleListComponent implements OnInit {
 
     /* apples: Apple[]= [{"name":"Manzana 7","sign":"Indefinido","stock":4,"image":'assets/img/manzana.png',"new":false, quantity: 0},{"name":"Manzana 2","sign":"Indefinido", "stock":1,"image":"assets/img/manzana.png","new":false, quantity: 0}]; */
 
+    
       constructor(
         private crate: AppleCrateService,
         private AppleDataService: AppleDataService) {}

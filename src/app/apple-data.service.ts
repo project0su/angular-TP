@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Apple } from './apple-list/Apple';
 
-const URL = 'https://6384061a3fa7acb14feb847c.mockapi.io/Apples';
+const URL = 'https://63892b31c5356b25a2fbcaa0.mockapi.io/api/v1/Apples';
 
 @Injectable({
   providedIn: 'root'
