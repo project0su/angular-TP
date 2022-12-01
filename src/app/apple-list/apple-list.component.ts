@@ -34,7 +34,6 @@ export class AppleListComponent implements OnInit {
       removeFromCrate(apple): void {          
         this.crate.returnStock(apple);         //devuelve todo el stock consumido por el cajon al item apple
         this.crate.removeFromCrate(apple);      // para que no quede el elemento con valor 0 en el cajon
-        console.log(this.apples);
       }
 
 

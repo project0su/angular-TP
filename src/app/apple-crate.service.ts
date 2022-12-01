@@ -32,7 +32,7 @@ export class AppleCrateService {
   removeFromCrate(apple: Apple) {
     /* let item: Apple = this._crateList.find((v1) => v1.name == apple.name); */
     let i: number= 0;
-    while (this._crateList[i].name != apple.name) {
+    while (this._crateList[i] != null && (this._crateList[i].name != apple.name)) {
       i++
     }
     let item= this._crateList[i];
@@ -45,7 +45,7 @@ export class AppleCrateService {
 
   returnStock(apple): void {
     let i: number= 0;
-    while (this._crateList[i].name != apple.name) {
+    while (this._crateList[i] != null && (this._crateList[i].name != apple.name)) {
       i++
     }
     let item= this._crateList[i];
