@@ -17,16 +17,15 @@ export class AppleListComponent implements OnInit {
     
       constructor(
         private crate: AppleCrateService,
-        private AppleDataService: AppleDataService) {}
+        private AppleDataService: AppleDataService) {
+        }
 
       ngOnInit(): void {
         this.AppleDataService.getAll()
-        .subscribe(apples=> this.apples = apples);
-        console.log(this.apples);
-        this.loadStock(this.apples, this.crate);
+        .subscribe(apples2=> this.apples = apples2);
       }
 
-      loadStock(apples, crate) {
+      /* loadStock(apples, crate) {
         console.log("??");
         console.log(crate.crateList.value);
         console.log(apples);
@@ -37,7 +36,7 @@ export class AppleListComponent implements OnInit {
             console.log("aa");
           }
         }
-      }
+      } */
 
       addToCrate(apple): void {
         if (apple.stock - apple.quantity >= 0) {
