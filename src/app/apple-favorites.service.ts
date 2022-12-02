@@ -17,7 +17,7 @@ export class AppleFavoritesService {
 
   constructor() { }
 
-  addTFavorites(apple: Apple) {
+  addToFavorites(apple: Apple) {
     let item: Apple = this._favoritesList.find((v1) => v1.name == apple.name);
     if(!item) {
       this._favoritesList.push({ ... apple});

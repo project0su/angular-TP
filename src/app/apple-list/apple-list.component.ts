@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { fromEventPattern } from 'rxjs';
 import { AppleCrateService } from '../apple-crate.service';
+import { AppleFavoritesService } from '../apple-favorites.service';
 import { AppleDataService } from '../apple-data.service';
 import { Apple } from './Apple';
 
@@ -17,8 +18,8 @@ export class AppleListComponent implements OnInit {
     
       constructor(
         private crate: AppleCrateService,
-        private AppleDataService: AppleDataService) {
-        }
+        private AppleDataService: AppleDataService,
+        private favorites: AppleFavoritesService) {}
 
       ngOnInit(): void {
         this.AppleDataService.getAll()
@@ -45,6 +46,11 @@ export class AppleListComponent implements OnInit {
           apple.quantity= 0;
         }
       }
+
+      addToFavorites(apple): void {
+        this.favorites.addToFavorites(apple);
+      }
+      
 
       removeFromCrate(apple): void {          
         this.crate.returnStock(apple);         //devuelve todo el stock consumido por el cajon al item apple
