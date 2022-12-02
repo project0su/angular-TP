@@ -17,13 +17,13 @@ export class AppleListComponent implements OnInit {
     
       constructor(
         private crate: AppleCrateService,
-        private AppleDataService: AppleDataService) {
-        this.loadStock(this.apples, crate);
-        }
+        private AppleDataService: AppleDataService) {}
 
       ngOnInit(): void {
         this.AppleDataService.getAll()
         .subscribe(apples=> this.apples = apples);
+        console.log(this.apples);
+        this.loadStock(this.apples, this.crate);
       }
 
       loadStock(apples, crate) {
