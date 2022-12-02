@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AppleShopApplesComponent } from './AppleShop-apples/AppleShop-apples.component';
 import { AppleShopAboutComponent } from './AppleShop-about/AppleShop-about.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 const routes: Routes = [
   {
     path: '',
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'apples',
     component: AppleShopApplesComponent,
+  },
+  {
+    path: 'fav',
+    component: FavoritesComponent,
   },
   {
     path: 'about',
