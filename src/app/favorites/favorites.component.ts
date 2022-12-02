@@ -4,7 +4,7 @@ import { AppleFavoritesService } from '../apple-favorites.service';
 import { Apple } from '../apple-list/Apple';
 
 @Component({
-  selector: 'app-crate',
+  selector: 'app-fravorites',
   templateUrl: './favorites.component.html',
   styleUrls: ['./favorites.component.scss']
 })
