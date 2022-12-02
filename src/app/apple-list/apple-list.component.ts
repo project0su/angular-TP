@@ -30,9 +30,9 @@ export class AppleListComponent implements OnInit {
       addToCrate(apple): void {
         if (apple.stock - apple.quantity >= 0) {
           this.crate.addToCrate(apple);
-          apple.stock -= apple.quantity;
           apple.quantity= 0;
         }
+        console.log(apple.stock);
       }
       removeFromCrate(apple): void {          
         this.crate.returnStock(apple);         //devuelve todo el stock consumido por el cajon al item apple

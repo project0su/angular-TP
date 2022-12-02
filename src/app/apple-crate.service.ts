@@ -24,8 +24,10 @@ export class AppleCrateService {
         this._crateList.push({ ... apple});
       } else if (item.quantity + apple.quantity <= item.stock) {
         item.quantity += apple.quantity;
+        apple.stock-= apple.quantity;
       } else {
         item.quantity= item.stock;
+        apple.stock= 0;
       }
       this.crateList.next(this._crateList); // equivalente al emitt de eventos
     }
