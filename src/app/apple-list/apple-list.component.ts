@@ -46,16 +46,16 @@ export class AppleListComponent implements OnInit {
           apple.quantity= 0;
         }
       }
-
-      addToFavorites(apple): void {
-        this.favorites.addToFavorites(apple);
-      }
-      
-
       removeFromCrate(apple): void {          
         this.crate.returnStock(apple);         //devuelve todo el stock consumido por el cajon al item apple
         this.crate.removeFromCrate(apple);      // para que no quede el elemento con valor 0 en el cajon
       }
 
+      addToFavorites(apple): void {
+        this.favorites.addToFavorites(apple);
+      }
+      removeFromFavorites(apple): void {      
+        this.favorites.removeFromFavorites(apple);      // para que no quede el elemento
+      }
 
 }
